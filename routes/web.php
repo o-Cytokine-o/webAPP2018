@@ -50,19 +50,11 @@ Route::get("/params_test",function(){
 */
 
 Route::get("/tasklist",function(){
-    $tasks = DB::select("select * from tasks");
+    $tasks = DB::select("select * from tasks order by id desc");
         return view("tasklist", [
             "tasks"=> $tasks
             ]
         );
-});
-
-
-Route::get("/event",function(){
-    return view("tasklist",[
-        "message" => "hello world",
-        "tasks" => $tasks = DB::select("select * from tasks"),
-    ]);
 });
 
 Route::post("/task",function(){
@@ -117,4 +109,13 @@ Route::post("/task/update",function(){
     return redirect("/tasklist");
 });
 
-//DB::delete('table_name')->where('id', 1)->execute();
+Route::post("/serch",function(){
+    $searchKey = request()->get("srchword");
+    
+        $tasks = DB::select("select * from tasks where task_name like ?",["%$searchKey%"]);    
+    
+    return view("tasklist", [
+            "tasks"=> $tasks
+        ]
+    );
+});

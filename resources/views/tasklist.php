@@ -46,14 +46,18 @@
 <!-- Begin Wrapper -->
 <div class="wrapper">
     <!-- Begin Intro -->
-    <div class="intro"><p id="asd">ほしいものリスト</p></div>
+    <div class="intro">
+        <img src="/images/intro_side_left.png" height="42px" width="20px">
+        <p id="asd">ほしいものリスト</p>
+        <img src="/images/intro_side_right.png" height="42px" width="20px">
+    </div>
     <!-- add Task -->
     <div class="addtask_optionform">
     <div class="addtask clearfix">
         <p class="icon">タスクを追加する</p>
         <div class="addform">
             <form action="/task" method="post">
-                <ul>
+                <ul class="clearfix">
                     <?= csrf_field() ?>
                     <li>商品名：<br><input type="text" name="task_name" placeholder="マグカップ" required></li>
                     <li>値段：<br><input type="text" name="price"></li>
@@ -69,14 +73,29 @@
 
     </div>
     <div class="optionform">
-        <p class="icon">表示オプション</p>
+        <p class="icon optionform_name">表示オプション</p>
         <div class="option">
-            <form action="/sort" method="get">
-                <input type="submit" value="期限順ソート">
-            </form>
-            <form action="/reset" method="get">
+            <div class="srch_form">
+                <form action="/serch" method="post">
+                    <?= csrf_field() ?>
+                    <input type="text" name="srchword" placeholder="検索">
+                    <input type="submit" value="検索">
+                </form>
+            </div>
+            <div class="limit_sort">
+                <p class="option_name">期限順：</p>
+                <form action="/sort/desc" method="get">
+                <input type="submit" value="降順">
+                </form>
+                <form action="/sort/asc" method="get">
+                <input type="submit" value="昇順">
+                </form>
+            </div>
+            <div class="view_reset">
+                <form action="/reset" method="get">
                 <input type="submit" value="リセット">
-            </form>
+                </form>
+            </div>
         </div>
     </div>
     </div>
@@ -87,20 +106,34 @@
             <!-- Begin Quote Format -->
             <?php foreach($tasks as $task): ?>
             <div class="post format-image box">
-                <ul>
-                    <tr class="postform"> 
-                        <li><th><strong>商品名:</strong></th><td><?=$task->task_name?></td></li>
-                        <li><th><strong>値段:</strong></th><td><?=$task->price?></td></li>
-                        <li><th><strong>追加された日付:</strong></th><td><?=$task->date?></td></li>
-                        <li><th><strong>URL:</strong></th><td><a href="<?=$task->url?>"><?=$task->url?></a></td></li>
-                        <li><th><strong>メリット:</strong></th><td><?=$task->meritto?></td></li>
-                        <li><th><strong>デメリット:</strong></th><td><?=$task->demeritto?></td></li>
+                <table class="postform"> 
+                    <tr class="postform_li1">
+                        <td>&emsp;<?=$task->task_name?></td>
                     </tr>
-                </ul>
+                </table>
+                <input type="checkbox" class="postcheckbox">
+                <table class="td_child">
+                        <tr><td class="td"><strong>値段:</strong></td>
+                            <td>&emsp;<?=$task->price?></td>
+                        </tr>
+                        <tr><td class="td"><strong>追加された日付:</strong></td>
+                            <td>&emsp;<?=$task->date?></td>
+                        </tr>
+                        <tr><td class="td"><strong>URL:</strong></td>
+                            <td>&emsp;<a href="<?=$task->url?>"><?=$task->url?></a></td>
+                        </tr>
+                        <tr><td class="td"><strong>メリット:</strong></td>
+                            <td>&emsp;<?=$task->meritto?></td>
+                        </tr>
+                        <tr><td class="td"><strong>デメリット:</strong></td>
+                            <td>&emsp;<?=$task->demeritto?></td>
+                        </tr> 
+                        </div>    
+                </table>
                 <script type="text/javascript">
                     var d = '<div class="hidden_box">'
                                 +'<label for="label<?=$task->id?>" id="<?=$task->id?>"><p>編集</p></label>'
-                                +'<input type="checkbox" id="label<?=$task->id?>" onchange="updbLavel();"/>'
+                                +'<input type="checkbox" id="label<?=$task->id?>"/>'
                                 +'<div class="hidden_show">'
                                     +'<ul>'
                                         +'<form action="/task/update" method="POST" class="updb">'
@@ -118,11 +151,7 @@
                                 +'</div>'
                             +'</div>';
                     document.write(d);
-                    function updbLavel(){
-                        var lavel = document.getElementById("<?=$task->id?>");
-                        lavel.style.backgroundColor = '#fff';
-                    }
-                    document.write(lavel);
+                    
                 </script>
                             <form action="/task/delete" method="POST" class="delb">
                                 <?=csrf_field()?>

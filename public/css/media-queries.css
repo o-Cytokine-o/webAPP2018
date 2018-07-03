@@ -223,6 +223,13 @@
 		margin: 0 0 20px 0;
 		width: 100%;
 	}
+	.intro p{
+		font-size: 20px;
+		width: auto;
+	}
+	.intro {
+		width: 100%;
+	}
 
 }/* END Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 
@@ -244,17 +251,6 @@
 }
 
 @media only screen and (max-width: 440px){
-	.addtask{
-		height: 1000px;
-	}
+	
 
-	.option {
-		float: none;
-		display: block;
-		margin:  auto;
 	}
-	.optionform {
-		width: 100%;
-		float: none;
-	}
-}

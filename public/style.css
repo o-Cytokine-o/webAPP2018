@@ -137,11 +137,6 @@ body {
     color: #fff;
 }
 
-.addform ul {
-    font-size: 14px;
-    margin: 0;
-}
-
 .addform {
     margin: 0;
     width: 250px;
@@ -163,15 +158,54 @@ body {
 }
 
 .option{
-    margin: 30px 0;
+    margin: 10px 0;
     display: inline-block;
-    width: 150px;
-
+    width: 100%;
 }
-
-.option input {
-    margin: 20px 30px;
-
+.option form {
+    width: 300px;
+    display: block;
+}
+.srch_form {
+    
+}
+.srch_form  {
+    display: inline-block;
+    width: 100%;
+}
+.srch_form form {
+    display: block;
+    width: 99%;
+    margin: 0 auto;
+}
+.srch_form input {
+    display: inline-block;
+}
+.srch_form input[type="text"] {
+    padding-left: 10px;
+    width: 220px;
+    margin-top: 8px;
+    margin-left: 5%;
+    height: 40px;
+    border: none;
+    border-radius:2px;
+    box-shadow: 0 0 2px gray inset;
+}
+.limit_sort {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    height: 80px;
+    width: 100%;
+    padding-left: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.option_name {
+    display: inline-block;
+}
+.option input[type="submit"] {
+    margin: 0;
+    display: inline-block;
     width: 100px;
     height: 40px;
     border-radius:5px;
@@ -181,6 +215,9 @@ body {
     box-shadow: 0 0 8px gray;
     color: #e9e9e9;
     cursor: pointer;
+}
+.option form {
+    margin: 0;
 }
 .addtask {
     background-color: #fff;
@@ -193,7 +230,7 @@ body {
     width: 49%;
 }
 .addtask p {
-    margin-left: 20px;
+    
     margin-top: 20px;
     font-size: 24px;
     color: #5e5e5e;
@@ -201,12 +238,11 @@ body {
 .optionform {
     height: 800px;
 }
-.optionform p {
-    margin-left: 20px;
+.optionform_name {
     margin-top: 20px;
+    margin-bottom: 0;
     font-size: 24px;
     color: #5e5e5e;
-
 }
 
 .addform input {
@@ -216,24 +252,61 @@ body {
     height: 30px;
     border: none;
     border-radius:2px;
-    box-shadow: 0 0 5px gray inset;
+    box-shadow: 0 0 2px gray inset;
 }
 .addform input[type="submit"] {
 	
 }
-.addform input:active {
-    box-shadow: 0 0 5px darkcyan;
-    background-color: #fff;
+.postform tr {
+    display: block;
 }
-.postform li{
-    margin: 5px 0;
+.postform table {
+    padding-left: 10px;
+    display: block;
+}
+.td {
+    margin: 10px 0 10px 10px;
+    width: 34%;
+}
+.td_child {
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(150,150,150,0.4);
+    width: 360px;
+    font-family: "UD Digi Kyokasho NP-R";
 }
 
-.postform {
-    margin-bottom: 0;
+.td_child tr {
+    border-top: 1px solid rgba(150,150,150,0.4);
+    line-height: 30px;
+    width: 100%;
+    font-size: 14px;
 }
+.td_child td:nth-child(2) {
+    width: 66%;
+}
+.postform_li1 {
+    font-size: 30px;
+    border-bottom: 1.5px solid rgba(150,150,150,0.4);
+    padding-bottom: 15px;
+    margin: 10px 0 0 0;
+    width: 440px;
+    transform: translateX(-20px);
+    font-family: "UD Digi Kyokasho NP-R";
+    font-weight: 700;
+}
+.postcheckbox {
+    display: inline-block;
+    background-color: #fff;
+}
+.
 .hidden_show ul {
     margin: 0;
+}
+.post {
+    
 }
 .post input[type="text"] {
     padding-left: 8px;
@@ -281,13 +354,14 @@ body {
     margin-left: 10px;
 }
 .updateB {
-    border: none;
+    border: solid;
+    border-color: #67b168;
     border-radius:5px;
     position: center;
-    background-color: #67b168;
+    background-color: #fff;
     width: 100px;
     height: 40px;
-    color: #fff;
+    color: #67b168;
 }
 .delb {
     display: flow;
@@ -535,11 +609,15 @@ hr {
     width: 1010px;
     margin: 0 auto;
 }
+.wrapper input:hover {
+    transition: all 0.5s ease;
+    box-shadow: 0 0 15px gray;
+}
 .header-wrapper {
     background-image: url("/images/main1.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    margin-bottom: 0;
+    margin-bottom:
     -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.55), inset 0 -1px 0 rgba(255,255,255,0.09);
     -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.55), inset 0 -1px 0 rgba(255,255,255,0.09);
     box-shadow: 0 1px 0 rgba(0,0,0,0.55), inset 0 -1px 0 rgba(255,255,255,0.09);
@@ -555,22 +633,26 @@ hr {
 .intro {
     font-size: 28px;
     line-height: 40px;
- 	
-    margin: 0 auto 20px auto;
+    margin: 20px auto 20px auto;
     height: 80px;
     color: #5e5e5e;
     font-weight: 600;
-    width: 100%;
+    width: 400px;
     text-align: center;
     
     border-radius: 10px;
     padding-top: 5px;
 }
 .intro p {
-    margin-top: 20px;
     border-bottom: 2px solid #2e4534;
     padding: 0;
-    width: 100%;
+    width: 250px;
+    display: inline-block;
+}
+.intro img {
+    
+    display: inline-block;
+    transform: translateY(15px);
 }
 #navigation {
     background: rgba(0, 0, 0, 0.44);
