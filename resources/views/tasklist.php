@@ -60,13 +60,27 @@
                 <ul class="clearfix">
                     <?= csrf_field() ?>
                     <li>商品名：<br><input type="text" name="task_name" placeholder="マグカップ" required></li>
-                    <li>値段：<br><input type="text" name="price"></li>
-                    <li>期限：<br><input type="date" name="date"></li>
-                    <li>URL:<br><input type="text" name="url"></li>
-                    <li>メリット：<br><input type="text" name="meritto"></li>
-                    <li>デメリット：<br><input type="text" name="demeritto"></li>
+                    <li>値段<br><input type="text" name="price"></li>
+                    <li>期限<br><input type="date" name="date"></li>
+                    <li>URL<br><input type="text" name="url"></li>
+                    <li>メリット<br><input type="text" name="meritto"></li>
+                    <li>デメリット<br><input type="text" name="demeritto"></li>
+                    <li class="hosiido">
+                        <p>ほしい度</p>
+                        <div class="stars">
+                        <input type="radio" name="hosii" id="hosi1" value="1">
+                        <label for="hosi1" class="lhosi1">★</label>               
+                        <input type="radio" name="hosii" id="hosi2" value="2">
+                        <label for="hosi2">★</label>
+                        <input type="radio" name="hosii" id="hosi3" value="3">
+                        <label for="hosi3">★</label>
+                        <input type="radio" name="hosii" id="hosi4" value="4">
+                        <label for="hosi4">★</label>
+                        <input type="radio" name="hosii" id="hosi5" value="5">
+                        <label for="hosi5">★</label>
+                        </div>       
+                    </li>
                     <li><input type="submit" value="タスクの追加"></li>
-
                 </ul>
             </form>
         </div>
@@ -168,8 +182,7 @@
                                     +'</ul>'
                                 +'</div>'
                             +'</div>';
-                    document.write(d);
-                    
+                    document.write(d);        
                 </script>
                             <form action="/task/delete" method="POST" class="delb">
                                 <?=csrf_field()?>

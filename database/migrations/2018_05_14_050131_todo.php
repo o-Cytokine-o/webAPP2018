@@ -21,6 +21,8 @@ class Todo extends Migration
             $table->string('url');
             $table->string('meritto');
             $table->string('demeritto');
+            $table->integer('hosii');
+            $table->integer('hitsuyou');
 
             $table->timestamps();
         });
