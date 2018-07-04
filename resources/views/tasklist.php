@@ -82,13 +82,31 @@
                     <input type="submit" value="検索">
                 </form>
             </div>
-            <div class="limit_sort">
-                <p class="option_name">期限順：</p>
+            <div class="option_list clearfix">
+                <p class="option_name">値段順</p>
                 <form action="/sort/desc" method="get">
-                <input type="submit" value="降順">
+                <input type="submit" value="降順" class="clearfix">
                 </form>
                 <form action="/sort/asc" method="get">
-                <input type="submit" value="昇順">
+                <input type="submit" value="昇順" class="clearfix">
+                </form>
+            </div>
+            <div class="option_list clearfix">
+                <p class="option_name">期限順</p>
+                <form action="/limit/sort/desc" method="get">
+                    <input type="submit" value="降順" class="clearfix">
+                </form>
+                <form action="/limit/sort/asc" method="get">
+                    <input type="submit" value="昇順" class="clearfix">
+                </form>
+            </div>
+            <div class="option_list clearfix">
+                <p class="option_name">期限順</p>
+                <form action="/sort/desc" method="get">
+                    <input type="submit" value="降順" class="clearfix">
+                </form>
+                <form action="/sort/asc" method="get">
+                    <input type="submit" value="昇順" class="clearfix">
                 </form>
             </div>
             <div class="view_reset">

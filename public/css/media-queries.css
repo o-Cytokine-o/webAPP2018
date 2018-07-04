@@ -251,6 +251,9 @@
 }
 
 @media only screen and (max-width: 440px){
-	
+	.option_name {
+		margin-right: 0;
+	}
+	.
 
 	}

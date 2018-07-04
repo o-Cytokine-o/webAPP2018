@@ -77,7 +77,16 @@ Route::post("/task/delete",function(){
     return redirect("/tasklist");
 });
 
-Route::get("/sort",function(){
+Route::get("/limit/sort/desc",function(){
+
+    $tasks=DB::select("select * from tasks order by 4 desc");
+
+    return view("tasklist", [
+            "tasks"=> $tasks
+        ]
+    );
+});
+Route::get("/limit/sort/asc",function(){
 
     $tasks=DB::select("select * from tasks order by 4");
 
