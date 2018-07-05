@@ -156,7 +156,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
-    height: 800px;
+    height: 850px;
     float: right;
     margin-bottom: 20px;
     padding-top: 20px;
@@ -241,7 +241,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
-    height: 800px;
+    height: 850px;
     display: inline-block;
     margin-bottom: 20px;
     padding-top: 20px;
@@ -414,6 +414,7 @@ body {
     display: inline-block;
     margin-top: 20px;
     cursor: pointer;
+    text-shadow: 0 0 2px gray;
 }
 .hosiido input {
     display: none;
@@ -457,7 +458,90 @@ body {
 .hosiido input[type="radio"]:checked + label {
     color: #ffd416;
 } 
-
+.star_on {
+    display: inline-block;
+    color: #ffd416;
+    text-shadow: 0 0 2px gray;
+    font-size: 24px;
+}
+.star_off {
+    display: inline-block;
+    color: rgba(0,0,0,0.4);
+    text-shadow: 0 0 2px gray;
+    font-size: 24px;
+}
+.marks {
+    transform: scale(-1, 1);
+    width: 180px;
+    margin: 0;
+}
+.hitsuyou p {
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+}
+.hitsuyou label {
+    font-size: 30px;
+    color: rgba(0,0,0,0.4);
+    display: inline-block;
+    margin-top: 20px;
+    cursor: pointer;
+    text-shadow: 0 0 2px gray;
+}
+.hitsuyou input {
+    display: none;
+}
+.hitsuyou label:hover {
+    color: #ffd416;
+}
+#hitsu1:hover ~ label {
+    color: #ff3a47;
+} 
+#hitsu2:hover ~ label {
+    color: #ff3a47;
+} 
+#hitsu3:hover ~ label {
+    color: #ff3a47;
+} 
+#hitsu4:hover ~ label {
+    color: #ff3a47;
+} 
+#hitsu5:hover ~ label {
+    color: #ff3a47;
+} 
+.hitsuyou label:hover {
+    color: #ff3a47;
+}
+#hitsu1:checked ~ label {
+    color: #ff3a47;
+} 
+#hitsu2:checked ~ label {
+    color: #ff3a47;
+} 
+#hitsu3:checked ~ label {
+    color: #ff3a47;
+} 
+#hitsu4:checked ~ label {
+    color: #ff3a47;
+} 
+#hitsu5:checked ~ label {
+    color: #ff3a47;
+} 
+.hitsuyou input[type="radio"]:checked + label {
+    color: #ff3a47;
+} 
+.mark_on {
+    display: inline-block;
+    color: #ff3a47;
+    text-shadow: 0 0 2px gray;
+    font-size: 24px;
+}
+.mark_off {
+    display: inline-block;
+    color: rgba(0,0,0,0.4);
+    text-shadow: 0 0 2px gray;
+    font-size: 24px;
+}
 /*----------------------*/
 .hidden_box {
     padding: 0;
@@ -472,7 +556,7 @@ body {
     margin: 0 0 10px 0;
 }
 /*ボタン装飾*/
-.hidden_box label {
+.hidden_box .editB  {
     display: inline-block;
     margin: 0;
     padding: 10px 35px 10px 35px;

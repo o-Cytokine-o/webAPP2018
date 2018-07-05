@@ -64,9 +64,11 @@ Route::post("/task",function(){
     $url = request()->get("url");
     $meri = request()->get("meritto");
     $demeri = request()->get("demeritto");
+    $hosii = request()->get("hosii");
+    $hitsuyou = request()->get("hitsuyou");
 
-    DB::insert("insert into tasks (task_name,price,date,url,meritto,demeritto)
-        values (?,?,?,?,?,?)",[$task_name,$price,$date,$url,$meri,$demeri]);
+    DB::insert("insert into tasks (task_name,price,date,url,meritto,demeritto,hosii,hitsuyou)
+        values (?,?,?,?,?,?,?,?)",[$task_name,$price,$date,$url,$meri,$demeri,$hosii,$hitsuyou]);
 
     return redirect("/tasklist");
 });
@@ -112,9 +114,11 @@ Route::post("/task/update",function(){
     $url = request()->get("url");
     $meri = request()->get("meritto");
     $demeri = request()->get("demeritto");
+    $hosii = request()->get("hosii");
+    $hitsuyou = request()->get("hitsuyou");
 
-    DB::update("update tasks set task_name=?,price=?,date=?,url=?,meritto=?,demeritto=?
-         where id=?",[$task_name,$price,$date,$url,$meri,$demeri,$taskId]);
+    DB::update("update tasks set task_name=?,price=?,date=?,url=?,meritto=?,demeritto=?,hosii=?,hitsuyou=? 
+         where id=?",[$task_name,$price,$date,$url,$meri,$demeri,$hosii,$hitsuyou,$taskId]);
     return redirect("/tasklist");
 });
 
