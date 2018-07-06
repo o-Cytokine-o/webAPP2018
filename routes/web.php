@@ -60,15 +60,16 @@ Route::get("/tasklist",function(){
 Route::post("/task",function(){
     $task_name = request()->get("task_name");
     $price = request()->get("price");
-    $date = request()->get("date");
+    $date = date("Y-m-d");
+    $imageurl = request()->get("imageurl");
     $url = request()->get("url");
     $meri = request()->get("meritto");
     $demeri = request()->get("demeritto");
     $hosii = request()->get("hosii");
     $hitsuyou = request()->get("hitsuyou");
 
-    DB::insert("insert into tasks (task_name,price,date,url,meritto,demeritto,hosii,hitsuyou)
-        values (?,?,?,?,?,?,?,?)",[$task_name,$price,$date,$url,$meri,$demeri,$hosii,$hitsuyou]);
+    DB::insert("insert into tasks (task_name,price,date,imageurl,url,meritto,demeritto,hosii,hitsuyou)
+        values (?,?,?,?,?,?,?,?,?)",[$task_name,$price,$date,$imageurl,$url,$meri,$demeri,$hosii,$hitsuyou]);
 
     return redirect("/tasklist");
 });
@@ -79,7 +80,7 @@ Route::post("/task/delete",function(){
     return redirect("/tasklist");
 });
 
-Route::get("/limit/sort/desc",function(){
+Route::get("/sort/date/desc",function(){
 
     $tasks=DB::select("select * from tasks order by 4 desc");
 
@@ -88,9 +89,45 @@ Route::get("/limit/sort/desc",function(){
         ]
     );
 });
-Route::get("/limit/sort/asc",function(){
+Route::get("/sort/date/asc",function(){
 
     $tasks=DB::select("select * from tasks order by 4");
+
+    return view("tasklist", [
+            "tasks"=> $tasks
+        ]
+    );
+});
+Route::get("/sort/hosiido/desc",function(){
+
+    $tasks=DB::select("select * from tasks order by hosii desc");
+
+    return view("tasklist", [
+            "tasks"=> $tasks
+        ]
+    );
+});
+Route::get("/sort/hosiido/asc",function(){
+
+    $tasks=DB::select("select * from tasks order by hosii");
+
+    return view("tasklist", [
+            "tasks"=> $tasks
+        ]
+    );
+});
+Route::get("/sort/hitsuyou/desc",function(){
+
+    $tasks=DB::select("select * from tasks order by hitsuyou desc");
+
+    return view("tasklist", [
+            "tasks"=> $tasks
+        ]
+    );
+});
+Route::get("/sort/hitsuyou/asc",function(){
+
+    $tasks=DB::select("select * from tasks order by hitsuyou");
 
     return view("tasklist", [
             "tasks"=> $tasks
@@ -110,15 +147,15 @@ Route::post("/task/update",function(){
     $taskId = request()->get("id");
     $task_name = request()->get("task_name");
     $price = request()->get("price");
-    $date = request()->get("date");
+    $imageurl = request()->get("imageurl");
     $url = request()->get("url");
     $meri = request()->get("meritto");
     $demeri = request()->get("demeritto");
     $hosii = request()->get("hosii");
     $hitsuyou = request()->get("hitsuyou");
 
-    DB::update("update tasks set task_name=?,price=?,date=?,url=?,meritto=?,demeritto=?,hosii=?,hitsuyou=? 
-         where id=?",[$task_name,$price,$date,$url,$meri,$demeri,$hosii,$hitsuyou,$taskId]);
+    DB::update("update tasks set task_name=?,price=?,imageurl=?,url=?,meritto=?,demeritto=?,hosii=?,hitsuyou=? 
+         where id=?",[$task_name,$price,$imageurl,$url,$meri,$demeri,$hosii,$hitsuyou,$taskId]);
     return redirect("/tasklist");
 });
 
