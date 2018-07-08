@@ -18,10 +18,11 @@ class Todo extends Migration
             $table->string('task_name');
             $table->integer('price');
             $table->date('date');
-            $table->string('imageurl');
-            $table->string('url');
+            $table->text('imageurl');
+            $table->text('url');
             $table->string('meritto');
             $table->string('demeritto');
+            $table->text('riyu');
             $table->integer('hosii');
             $table->integer('hitsuyou');
 

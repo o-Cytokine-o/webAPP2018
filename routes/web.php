@@ -65,11 +65,12 @@ Route::post("/task",function(){
     $url = request()->get("url");
     $meri = request()->get("meritto");
     $demeri = request()->get("demeritto");
+    $riyu = request()->get("riyu");
     $hosii = request()->get("hosii");
     $hitsuyou = request()->get("hitsuyou");
 
-    DB::insert("insert into tasks (task_name,price,date,imageurl,url,meritto,demeritto,hosii,hitsuyou)
-        values (?,?,?,?,?,?,?,?,?)",[$task_name,$price,$date,$imageurl,$url,$meri,$demeri,$hosii,$hitsuyou]);
+    DB::insert("insert into tasks (task_name,price,date,imageurl,url,meritto,demeritto,riyu,hosii,hitsuyou)
+        values (?,?,?,?,?,?,?,?,?,?)",[$task_name,$price,$date,$imageurl,$url,$meri,$demeri,$riyu,$hosii,$hitsuyou]);
 
     return redirect("/tasklist");
 });
@@ -151,11 +152,12 @@ Route::post("/task/update",function(){
     $url = request()->get("url");
     $meri = request()->get("meritto");
     $demeri = request()->get("demeritto");
+    $riyu = request()->get("riyu");
     $hosii = request()->get("hosii");
     $hitsuyou = request()->get("hitsuyou");
 
-    DB::update("update tasks set task_name=?,price=?,imageurl=?,url=?,meritto=?,demeritto=?,hosii=?,hitsuyou=? 
-         where id=?",[$task_name,$price,$imageurl,$url,$meri,$demeri,$hosii,$hitsuyou,$taskId]);
+    DB::update("update tasks set task_name=?,price=?,imageurl=?,url=?,meritto=?,demeritto=?,riyu=?,hosii=?,hitsuyou=? 
+         where id=?",[$task_name,$price,$imageurl,$url,$meri,$demeri,$riyu,$hosii,$hitsuyou,$taskId]);
     return redirect("/tasklist");
 });
 

@@ -157,7 +157,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
-    height: 850px;
+    height: 950px;
     float: right;
     margin-bottom: 20px;
     padding-top: 20px;
@@ -243,7 +243,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 8px gray;
-    height: 850px;
+    height: 950px;
     display: inline-block;
     margin-bottom: 20px;
     padding-top: 20px;
@@ -271,6 +271,13 @@ body {
     border: none;
     border-radius:2px;
     box-shadow: 0 0 2px gray inset;
+}
+.addform textarea {
+    background-color: #fff;
+    border-style: none;
+    color: #222;
+    box-shadow: 0 0 2px gray inset;
+    margin-top: 10px;
 }
 .addform input[type="submit"] {
 	
@@ -307,7 +314,12 @@ body {
     margin-top: 0;
     margin-bottom: 0;
     width: 170px;
-    word-break: break-all;
+    
+}
+.td2 a {
+    height: 30px;
+    margin: 0;
+    overflow: hidden;
 }
 .postform_li1 {
     font-size: 30px;
@@ -363,10 +375,10 @@ body {
     cursor: pointer;
 
 }
-.addtask_optionform {
+.addtask_optionform input textarea {
     height: auto;
     display: block;
-
+    font-size: 18px;
 }
 
 .addtask li:nth-child(8) {
@@ -637,7 +649,7 @@ textarea {
     color: #ffffff;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 21px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box; /* Firefox, other Gecko */
@@ -795,6 +807,10 @@ hr {
     transition: all 0.5s ease-in-out;
 }
 .wrapper input:hover {
+    transition: all 1s ease;
+    box-shadow: 0 0 15px gray;
+}
+.wrapper textarea:hover {
     transition: all 1s ease;
     box-shadow: 0 0 15px gray;
 }
@@ -1935,6 +1951,7 @@ ul.flickr-feed li img {
 .site-generator-wrapper {
     background: rgba(0, 0, 0, 0.55);
     overflow: hidden;
+    margin-top: 20px;
 }
 .site-generator {
     width: 1010px;
@@ -1995,10 +2012,20 @@ li {
     overflow: hidden;
     transition: all 0.5s ease;
 }
+.post textarea {
+    margin-top: 10px;
+    margin-left: 30px;
+    color: gray;
+    width: 260px;
+    box-shadow: 0 0 8px gray inset;
+}
 ul {
     padding: 0px;
 }
 .blog-wrap {
     width: 100%;
     margin: 0 auto;
+}
+.royu {
+    word-break: break-all;
 }

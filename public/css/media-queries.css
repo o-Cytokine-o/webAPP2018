@@ -259,6 +259,21 @@
 	.imageurl img {
 		margin: 10px auto 0 auto;
 	}
+	.post textarea {
+		display: block;
+		width: 200px;
+	}
+	.logo {
+		padding-top: 20px;
+		word-break: break-all;
+		height: 100px;
+	}
+	.logo h1 {
+		line-height: 50px;
+	}
+	.header {
+		margin: 0;
+	}
 
 }/* END Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 

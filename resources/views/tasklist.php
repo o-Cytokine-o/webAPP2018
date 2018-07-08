@@ -59,12 +59,13 @@
             <form action="/task" method="post">
                 <ul class="clearfix">
                     <?= csrf_field() ?>
-                    <li>商品名：<br><input type="text" name="task_name" placeholder="マグカップ" required></li>
-                    <li>値段<br><input type="text" name="price"></li>
-                    <li>画像のURL<br><input type="text" name="imageurl"></li>
-                    <li>URL<br><input type="text" name="url"></li>
+                    <li>商品名：<br><input type="text" name="task_name" placeholder="例：マグカップ" required></li>
+                    <li>値段<br><input type="text" name="price" placeholder="1200">円</li>
+                    <li>画像のURL<br><input type="text" name="imageurl" placeholder="https://Mytasklist"></li>
+                    <li>URL<br><input type="text" name="url" placeholder="https://Mytasklist"></li>
                     <li>メリット<br><input type="text" name="meritto"></li>
                     <li>デメリット<br><input type="text" name="demeritto"></li>
+                    <li>購入する理由<br><textarea name="riyu"></textarea></li>
                     <li class="hosiido">
                         <p>ほしい度</p>
                         <div class="stars">
@@ -189,6 +190,9 @@
                         <tr><td class="td"><strong>デメリット:</strong></td>
                             <td class="td2">&emsp;<?=$task->demeritto?></td>
                         </tr> 
+                        <tr><td class="td riyu"><strong>購入する理由:</strong></td>
+                            <td class="td2">&emsp;<?=$task->riyu?></td>
+                        </tr> 
                         <tr><td class="td"><strong>ほしい度:</strong></td>
                             <td class="td2">&emsp;
                                 <script type="text/javascript">
@@ -229,6 +233,7 @@
                                             +'<li><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URL:&emsp;&nbsp;</th><td><input type="text" name="url" value="<?=$task->url?>"></td></li>'
                                             +'<li><th>&nbsp;&nbsp;メリット：&emsp;</th><td><input type="text" name="meritto" value="<?=$task->meritto?>"></td></li>'
                                             +'<li><th>デメリット：&nbsp;&nbsp;</th><td><input type="text" name="demeritto" value="<?=$task->demeritto?>"></td></li>'
+                                            +'<li><th>購入する理由：</th><td><textarea name="riyu" placeholder="<?=$task->riyu?>"></textarea></td></li>'
                                              );
                     document.write('<li class="hosiido<?=$task->id?>"><p>ほしい度</p><div class="stars">');
                                             for(var h=5,h2=1;h > 0;h--,h2++){
@@ -283,7 +288,7 @@
 </div>
 <!-- End Wrapper -->
 <div class="site-generator-wrapper">
-    <div class="site-generator">Copyright Obscura 2012. Design by <a href="http://elemisfreebies.com">elemis</a>. All rights reserved.</div>
+    <div class="site-generator">Copyright Tasklist 2018. Design by <a href="http://elemisfreebies.com">Masayuki Okuno</a>. All rights reserved.</div>
 </div>
 <!-- End Footer -->
 <script type="text/javascript" src="js/scripts.js"></script>
