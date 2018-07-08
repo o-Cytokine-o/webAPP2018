@@ -256,6 +256,9 @@
 		padding-left: 6px;
 		padding-right: 6px;
 	}
+	.imageurl img {
+		margin: 10px auto 0 auto;
+	}
 
 }/* END Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
 

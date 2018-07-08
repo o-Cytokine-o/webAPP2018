@@ -282,9 +282,9 @@ body {
     padding-left: 10px;
     display: block;
 }
-.td {
+.td  {
     margin: 10px 0 10px 10px;
-    width: 34%;
+    width: 150px;
 }
 .td_child {
     display: block;
@@ -299,18 +299,22 @@ body {
 .td_child tr {
     border-top: 1px solid rgba(150,150,150,0.4);
     line-height: 30px;
-    width: 100%;
+    width: 330px;
     font-size: 14px;
 }
-.td_child td:nth-child(2) {
-    width: 66%;
+.td2 {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 170px;
+    word-break: break-all;
 }
 .postform_li1 {
     font-size: 30px;
     border-bottom: 1.5px solid rgba(150,150,150,0.4);
     padding-bottom: 15px;
     margin: 10px 0 0 0;
-    width: 440px;
+    width: 300px;
     transform: translateX(-20px);
     font-family: "UD Digi Kyokasho NP-R";
     font-weight: 700;
@@ -368,6 +372,23 @@ body {
 .addtask li:nth-child(8) {
 
 }
+.imageurl img {
+    box-shadow: 0 0 8px gray;
+
+}
+.imageurl {
+    margin-top: 10px;
+}
+.imageurlNO {
+    
+    width: 250px;
+    text-align: center;
+    font-size: 20px;
+}
+.imageurlNO p {
+    margin-top: 74px;
+    margin-bottom: 75px;
+}
 .updb{
     margin-left: 10px;
 }
@@ -397,6 +418,7 @@ body {
     display: block;
     width: 100%;
     clear: both;
+    height: 35px;
 }
 
 .post input[type="submit"]{
@@ -592,7 +614,7 @@ body {
 }
 .hidden_show {
     display: block;
-    width: 400px;
+    width: 380px;
 }
 
 /*クリックで中身表示*/
@@ -1147,7 +1169,7 @@ hr {
 
 }
 .box {
-    margin: 0 0 30px 0;
+    margin: 20px 0 0 0;
     background-color:#fff4e1;
     border-radius: 10px;
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.44);
@@ -1966,6 +1988,7 @@ li {
     color: #282b2e;
 }
 .post {
+    display: inline-block;
     width: 400px;
     float: left;
     margin-left: 5.5%;

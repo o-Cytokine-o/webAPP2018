@@ -121,7 +121,7 @@
                 </form>
             </div>
             <div class="option_list clearfix">
-                <p class="option_name">日付順</p>
+                <p class="option_name">追加した順</p>
                 <form action="/sort/date/desc" method="get">
                     <input type="submit" value="降順" class="clearfix">
                 </form>
@@ -140,15 +140,15 @@
             </div>
             <div class="option_list clearfix">
                 <p class="option_name">必要度順</p>
-                <form action="/sort/hosiido/desc" method="get">
+                <form action="/sort/hitsuyou/desc" method="get">
                     <input type="submit" value="降順" class="clearfix">
                 </form>
-                <form action="/sort/hosiido/asc" method="get">
+                <form action="/sort/hitsuyou/asc" method="get">
                     <input type="submit" value="昇順" class="clearfix">
                 </form>
             </div>
             <div class="view_reset">
-                <form action="/reset" method="get">
+                <form action="/tasklist" method="get">
                 <input type="submit" value="リセット">
                 </form>
             </div>
@@ -158,33 +158,39 @@
     <!-- Begin Blog Grid -->
     <div class="blog-wrap clearfix">
         <!-- Begin Blog -->
-        <div class="">
+        
             <!-- Begin Quote Format -->
             <?php foreach($tasks as $task): ?>
-            <div class="post format-image box">
-                <table class="postform"> 
-                    <tr class="postform_li1">
-                        <td>&emsp;<?=$task->task_name?></td>
-                    </tr>
-                </table>
+            <div class="post format-image box clearfix">
+               
+                        <div class="postform_li1">&emsp;<?=$task->task_name?></div>
+                
+                <script type="text/javascript">
+                    if("<?=$task->imageurl?>"){
+                        document.write('<div class="imageurl"><img src="<?=$task->imageurl?>" width="250px" height="150px"></div>');
+                    }else{
+                        document.write('<div class="imageurlNO"><p>No image</p></div>')
+                    }
+                </script>
+                    
                 <table class="td_child">
                         <tr><td class="td"><strong>値段:</strong></td>
-                            <td>&emsp;<?=$task->price?></td>
+                            <td class="td2">&emsp;<?=$task->price?></td>
                         </tr>
                         <tr><td class="td"><strong>追加された日付:</strong></td>
-                            <td>&emsp;<?=$task->date?></td>
+                            <td class="td2">&emsp;<?=$task->date?></td>
                         </tr>
                         <tr><td class="td"><strong>URL:</strong></td>
-                            <td>&emsp;<a href="<?=$task->url?>"><?=$task->url?></a></td>
+                            <td class="td2">&emsp;<a href="<?=$task->url?>"><?=$task->url?></a></td>
                         </tr>
                         <tr><td class="td"><strong>メリット:</strong></td>
-                            <td>&emsp;<?=$task->meritto?></td>
+                            <td class="td2">&emsp;<?=$task->meritto?></td>
                         </tr>
                         <tr><td class="td"><strong>デメリット:</strong></td>
-                            <td>&emsp;<?=$task->demeritto?></td>
+                            <td class="td2">&emsp;<?=$task->demeritto?></td>
                         </tr> 
                         <tr><td class="td"><strong>ほしい度:</strong></td>
-                            <td>&emsp;
+                            <td class="td2">&emsp;
                                 <script type="text/javascript">
                                     for(var i=0;i < <?=$task->hosii?>;i++){
                                         document.write('<div class="star_on">★</div>');
@@ -261,13 +267,13 @@
                             </form>
                         
                 <div class="details">
-                    <span class="icon-quote"><a href="#">September 21, 2012</a></span>
-                    <span class="likes"><a href="#" class="likeThis">27</a></span>
-                    <span class="comments"><a href="#">4</a></span>
+                    <span ><a href="">&emsp;</a></span>
+                    <span ><a href="#" class="likeThis"&emsp;</a></span>
+                    <span class="comments"><a href="#">&emsp;</a></span>
                 </div>
             </div>
             <?php endforeach; ?>
-        </div>
+       
         <!-- End Blog -->
     </div>
     <!-- End Blog Grid -->
