@@ -146,7 +146,7 @@ body {
 
 .addform {
     margin: 0;
-    width: 250px;
+    width: 260px;
     display: inline-block;
 }
 .addform li {
@@ -318,8 +318,11 @@ body {
 }
 .td2 a {
     height: 30px;
+    width: 100px;
     margin: 0;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .postform_li1 {
     font-size: 30px;
